@@ -1,0 +1,70 @@
+{
+  "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/mvcMovie.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 900
+  },
+  "RootNamespace": "mvcMovie",
+  "Documents": [
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Views/Home/Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Views/Shared/Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Views/_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Areas/Sales/Views/_Startup.cshtml",
+      "TargetPath": "Areas\\Sales\\Views\\_Startup.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Views/Home/tableUser.cshtml",
+      "TargetPath": "Views\\Home\\tableUser.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Desktop/CongNghePhanMem/Tung/mvcMovie/Areas/Sales/Views/_ViewImports.cshtml",
+      "TargetPath": "Areas\\Sales\\Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
+  "SerializationFormat": "0.2"
+}
