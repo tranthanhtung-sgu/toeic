@@ -3,8 +3,8 @@ using Domain.Models;
 
 namespace Application.ViewModels
 {
-    public class ClassViewModel
+    public class LevelViewModel
     {
-        public IEnumerable<Class> Classes { get; set; }
+        
     }
 }

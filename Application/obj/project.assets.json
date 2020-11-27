@@ -1112,11 +1112,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj",
+      "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj",
       "projectName": "Application",
-      "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj",
+      "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj",
       "packagesPath": "/Users/tranthanhtung/.nuget/packages/",
-      "outputPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/obj/",
+      "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
@@ -1131,8 +1131,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj": {
-              "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj"
+            "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj": {
+              "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj"
             }
           }
         }

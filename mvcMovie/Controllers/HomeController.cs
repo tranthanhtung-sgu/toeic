@@ -10,11 +10,11 @@ namespace mvcMovie.Controllers
     // [ApiController]
     public class HomeController : Controller
     {
-        private readonly IClassRepositoryAsync classRepositoryAsync;
+        private readonly ILevelRepositoryAsync levelRepositoryAsync;
 
-        public HomeController(IClassRepositoryAsync classRepositoryAsync)
+        public HomeController(ILevelRepositoryAsync levelRepositoryAsync)
         {
-            this.classRepositoryAsync = classRepositoryAsync;
+            this.levelRepositoryAsync = levelRepositoryAsync;
         }
 
         // public IActionResult Index()
@@ -22,15 +22,10 @@ namespace mvcMovie.Controllers
         //     var classes = classRepositoryAsync.GetAllAsync();
         //     return View(classes);
         // }
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var classes = await classRepositoryAsync.GetAllAsync();
-            return Ok(classes);
-        }
+        
         public async Task<IActionResult> Index()
         {
-            var classes =  await classRepositoryAsync.GetAllAsync();
+            var classes =  await levelRepositoryAsync.GetAllAsync();
             return View(classes);
         }
         

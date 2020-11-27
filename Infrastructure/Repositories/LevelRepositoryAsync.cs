@@ -9,12 +9,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    public class ClassRepositoryAsync : GenericRepositoryAsync<Level> ,IClassRepositoryAsync
+    public class LevelRepositoryAsync : GenericRepositoryAsync<Level> ,ILevelRepositoryAsync
     {
-        private readonly DbSet<Level> _classes;
-        public ClassRepositoryAsync(ToeicOnlineContext dbContext) : base(dbContext)
+        private readonly DbSet<Level> _levels;
+        public LevelRepositoryAsync(ToeicOnlineContext dbContext) : base(dbContext)
         {
-            _classes = dbContext.Set<Level>();
+            _levels = dbContext.Set<Level>();
         }
     }
 }

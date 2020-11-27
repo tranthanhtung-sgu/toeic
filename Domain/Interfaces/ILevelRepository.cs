@@ -3,7 +3,7 @@ using Domain.Models;
 
 namespace Domain.Interfaces
 {
-    public interface IClassRepository
+    public interface ILevelRepository
     {
          IEnumerable<Class> GetClasses();  
     }

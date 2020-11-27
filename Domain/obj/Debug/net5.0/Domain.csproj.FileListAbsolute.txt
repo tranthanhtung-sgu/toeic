@@ -34,3 +34,15 @@
 /Users/tranthanhtung/Documents/GitHub/Tung2/Domain/obj/Debug/net5.0/Domain.dll
 /Users/tranthanhtung/Documents/GitHub/Tung2/Domain/obj/Debug/net5.0/ref/Domain.dll
 /Users/tranthanhtung/Documents/GitHub/Tung2/Domain/obj/Debug/net5.0/Domain.pdb
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/bin/Debug/net5.0/Domain.deps.json
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/bin/Debug/net5.0/Domain.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/bin/Debug/net5.0/ref/Domain.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/bin/Debug/net5.0/Domain.pdb
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/Debug/net5.0/Domain.csprojAssemblyReference.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/Debug/net5.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/Debug/net5.0/Domain.AssemblyInfoInputs.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/Debug/net5.0/Domain.AssemblyInfo.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/Debug/net5.0/Domain.csproj.CoreCompileInputs.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/Debug/net5.0/Domain.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/Debug/net5.0/ref/Domain.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/Debug/net5.0/Domain.pdb

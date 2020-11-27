@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CrbpJu/OKplRfuOEC3mIj/yeCHH6q+1GEctPMqGINp2xI44WRpT5qpTOC44yc9LeoN2c/O9y6OyViRf2z7Wqiw==",
+  "dgSpecHash": "RILrpcL1S3EUOmj/3y9QoMhF3Kw9w3xRHmcWlK8sdapz8MY9wbr9QlQNnw2ZKackYjddsIcw/GlBf+P7Enusjw==",
   "success": true,
-  "projectFilePath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Infrastructure/Infrastructure.csproj",
+  "projectFilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/Infrastructure.csproj",
   "expectedPackageFiles": [
     "/Users/tranthanhtung/.nuget/packages/automapper/10.1.0/automapper.10.1.0.nupkg.sha512",
     "/Users/tranthanhtung/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.0/automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

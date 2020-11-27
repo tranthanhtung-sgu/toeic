@@ -33,7 +33,7 @@ namespace mvcMovie
                 b => b.MigrationsAssembly("Infrastructure")));
             services.AddIdentity<User, Role>().AddEntityFrameworkStores<ToeicOnlineContext>().AddDefaultTokenProviders();
             services.AddApiVersioning();
-            services.AddTransient<IClassRepositoryAsync,ClassRepositoryAsync>();
+            services.AddTransient<ILevelRepositoryAsync, LevelRepositoryAsync>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

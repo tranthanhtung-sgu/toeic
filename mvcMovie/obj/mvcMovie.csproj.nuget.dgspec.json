@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tranthanhtung/Documents/GitHub/Tung2/mvcMovie/mvcMovie.csproj": {}
+    "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/mvcMovie.csproj": {}
   },
   "projects": {
-    "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj": {
+    "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj",
+        "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj",
+        "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj",
         "packagesPath": "/Users/tranthanhtung/.nuget/packages/",
-        "outputPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/obj/",
+        "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj": {
-                "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj"
+              "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj": {
+                "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj"
               }
             }
           }
@@ -86,14 +86,14 @@
         }
       }
     },
-    "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj": {
+    "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj",
+        "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj",
+        "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj",
         "packagesPath": "/Users/tranthanhtung/.nuget/packages/",
-        "outputPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/obj/",
+        "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
@@ -160,14 +160,14 @@
         }
       }
     },
-    "/Users/tranthanhtung/Documents/GitHub/Tung2/Infrastructure/Infrastructure.csproj": {
+    "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/Tung2/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Infrastructure/Infrastructure.csproj",
+        "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/Infrastructure.csproj",
         "packagesPath": "/Users/tranthanhtung/.nuget/packages/",
-        "outputPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Infrastructure/obj/",
+        "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
@@ -182,11 +182,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj": {
-                "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj"
+              "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj": {
+                "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj"
               },
-              "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj": {
-                "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj"
+              "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj": {
+                "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj"
               }
             }
           }
@@ -263,14 +263,14 @@
         }
       }
     },
-    "/Users/tranthanhtung/Documents/GitHub/Tung2/mvcMovie/mvcMovie.csproj": {
+    "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/mvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/Tung2/mvcMovie/mvcMovie.csproj",
+        "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/mvcMovie.csproj",
         "projectName": "mvcMovie",
-        "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/mvcMovie/mvcMovie.csproj",
+        "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/mvcMovie.csproj",
         "packagesPath": "/Users/tranthanhtung/.nuget/packages/",
-        "outputPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/mvcMovie/obj/",
+        "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
@@ -285,14 +285,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj": {
-                "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Application/Application.csproj"
+              "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj": {
+                "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj"
               },
-              "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj": {
-                "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Domain/Domain.csproj"
+              "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj": {
+                "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj"
               },
-              "/Users/tranthanhtung/Documents/GitHub/Tung2/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/Users/tranthanhtung/Documents/GitHub/Tung2/Infrastructure/Infrastructure.csproj"
+              "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/Infrastructure.csproj"
               }
             }
           }
