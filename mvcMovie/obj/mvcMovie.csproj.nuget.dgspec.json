@@ -14,7 +14,7 @@
         "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+          "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -96,7 +96,7 @@
         "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+          "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -170,7 +170,7 @@
         "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+          "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -273,7 +273,7 @@
         "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+          "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

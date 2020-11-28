@@ -1,5 +1,6 @@
 using Application;
 using Application.Interfaces;
+using AutoMapper;
 using Domain.Models;
 using Infrastructure;
 using Infrastructure.Persistence;
@@ -27,6 +28,7 @@ namespace mvcMovie
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
             services.AddDbContext<ToeicOnlineContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext"),

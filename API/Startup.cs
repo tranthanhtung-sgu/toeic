@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Interfaces;
+using Application.Interfaces.Repositories;
 using AutoMapper;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
@@ -40,6 +41,7 @@ namespace API
             
             //DI
             services.AddTransient<ILevelRepositoryAsync, LevelRepositoryAsync>();
+            services.AddTransient<IClassRepositoryAsync, ClassRepositoryAsync>();
             services.AddSwaggerGen(c =>
             {
                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });

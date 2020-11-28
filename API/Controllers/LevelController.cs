@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Interfaces;
-using Application.ViewModels;
+using Application.ViewModels.Level;
 using AutoMapper;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -36,11 +37,25 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] LevelCreateRequest request)
+        public async Task<IActionResult> Create([FromForm] LevelViewModel request)
         {
-            // var level = _mapper.Map<LevelCreateRequest>(level);
-            // var levels = await _levelRepositoryAsync.AddAsync(request);
+             var result = _mapper.Map<Level>(request);
+             var levels = await _levelRepositoryAsync.AddAsync(result);
             return Ok(levels);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete (int Id)
+        {
+            await _levelRepositoryAsync.DeleteById(Id);
+            return Ok();
+        }
+        [HttpPut("level-update/{id}")]
+        public async Task<IActionResult> UpdateLevel([FromQuery]int id, LevelViewModel request)
+        {
+            await _levelRepositoryAsync.UpdateLevel(id,request);
+            return Ok();
+        }
+        
     }
 }

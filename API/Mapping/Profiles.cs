@@ -1,4 +1,5 @@
-using Application.ViewModels;
+using Application.ViewModels.Class;
+using Application.ViewModels.Level;
 using AutoMapper;
 using Domain.Models;
 
@@ -8,7 +9,10 @@ namespace API.Mapping
     {
         public Profiles()
         {
-            CreateMap<Level, LevelCreateRequest>();
+            CreateMap<LevelViewModel, Level>();
+            CreateMap<LevelViewModel, Level>().ReverseMap();
+            CreateMap<ClassCreateModel, Class>();
+            CreateMap<ClassCreateModel, Class>().ReverseMap();
         }
     }
 }

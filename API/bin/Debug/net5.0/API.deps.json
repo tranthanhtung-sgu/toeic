@@ -26,6 +26,7 @@
       "API/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
           "Domain": "1.0.0",
           "Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.0",
