@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BeKbKSNv+J/5u0KqiPjlk6IWMTHHEFYE+eZcGeJuosPzA2+spb4iS5LIQ7q+lVYecTvO3xyjCnOizhsGR/PIRA==",
+  "dgSpecHash": "F1WUloHuFk70Zm/tFG87kwB5qiftCyQWQwc0/ytsf3j04cGw6FUJ5lOdlNqjDQ7VMDcOgN27af8HD1kgHbXSkA==",
   "success": true,
   "projectFilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/Application.csproj",
   "expectedPackageFiles": [
@@ -30,10 +30,15 @@
     "/Users/tranthanhtung/.nuget/packages/microsoft.extensions.logging.abstractions/5.0.0/microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "/Users/tranthanhtung/.nuget/packages/microsoft.extensions.options/5.0.0/microsoft.extensions.options.5.0.0.nupkg.sha512",
     "/Users/tranthanhtung/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "/Users/tranthanhtung/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.8.0/microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",
+    "/Users/tranthanhtung/.nuget/packages/microsoft.identitymodel.logging/6.8.0/microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
+    "/Users/tranthanhtung/.nuget/packages/microsoft.identitymodel.tokens/6.8.0/microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "/Users/tranthanhtung/.nuget/packages/system.collections.immutable/5.0.0/system.collections.immutable.5.0.0.nupkg.sha512",
     "/Users/tranthanhtung/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "/Users/tranthanhtung/.nuget/packages/system.diagnostics.diagnosticsource/5.0.0/system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
-    "/Users/tranthanhtung/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
+    "/Users/tranthanhtung/.nuget/packages/system.identitymodel.tokens.jwt/6.8.0/system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
+    "/Users/tranthanhtung/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
+    "/Users/tranthanhtung/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

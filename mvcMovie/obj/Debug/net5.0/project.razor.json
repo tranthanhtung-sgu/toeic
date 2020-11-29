@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/mvcMovie.csproj",
+  "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/ToeicOnline.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15600,7 +15600,7 @@
     ],
     "CSharpLanguageVersion": 900
   },
-  "RootNamespace": "mvcMovie",
+  "RootNamespace": "ToeicOnline",
   "Documents": [
     {
       "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/Views/Home/Index.cshtml",

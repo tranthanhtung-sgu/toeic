@@ -1,0 +1,9 @@
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.csprojAssemblyReference.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.AssemblyInfoInputs.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.AssemblyInfo.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.csproj.CoreCompileInputs.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.MvcApplicationPartsAssemblyInfo.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.MvcApplicationPartsAssemblyInfo.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.RazorAssemblyInfo.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/Debug/net5.0/ToeicOnline.RazorAssemblyInfo.cs

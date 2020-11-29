@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvcMovie", "mvcMovie\mvcMovie.csproj", "{0F4ABB11-A8B3-4C78-B20A-C2ED7EF9FEC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToeicOnline", "mvcMovie\ToeicOnline.csproj", "{0F4ABB11-A8B3-4C78-B20A-C2ED7EF9FEC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{27EB7245-7411-479E-ACA6-E7BF2E4B801E}"
 EndProject
