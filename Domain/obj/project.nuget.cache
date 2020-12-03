@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZIGiMVcDM/+plS3Yj3FkID/sETpfysglsmKBZPrOUH6QPHTy7VLy73hYloBEd1wO5H6lSBmYX4+T+n76lotvKg==",
+  "dgSpecHash": "inATpiemIk/goZZ8ogwFpbBrfaYQiiakjUab2pfvNT4n8kXOpM2uaMFBpvgBFup7Qdbnm03IwCcEfvtaz9MvAg==",
   "success": true,
-  "projectFilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj",
+  "projectFilePath": "/Users/tranthanhtung/Downloads/toeic-develop-api/Domain/Domain.csproj",
   "expectedPackageFiles": [
     "/Users/tranthanhtung/.nuget/packages/automapper/10.1.0/automapper.10.1.0.nupkg.sha512",
     "/Users/tranthanhtung/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.0/automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

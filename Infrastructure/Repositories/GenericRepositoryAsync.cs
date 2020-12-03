@@ -10,7 +10,7 @@ namespace Infrastructure.Persistence.Repository
 {
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
-        private readonly ToeicOnlineContext _dbContext;
+        public readonly ToeicOnlineContext _dbContext;
 
         public GenericRepositoryAsync(ToeicOnlineContext dbContext)
         {

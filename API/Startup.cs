@@ -1,21 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Application.Interfaces;
+using Application.Interfaces.Repositories;
+using Application.System.Users;
 using AutoMapper;
+using Domain.Models;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using FluentValidation.AspNetCore;
+using Application;
 
 namespace API
 {
@@ -31,19 +30,20 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationLayer();
             services.AddAutoMapper(typeof(Startup));
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation();
             services.AddDbContext<ToeicOnlineContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext"),
-                b => b.MigrationsAssembly("Infrastructure")));
-            services.AddApiVersioning();
-            
+                b => b.MigrationsAssembly("Infrastructure")));            
             //DI
+            services.AddIdentity<User, Role>().AddEntityFrameworkStores<ToeicOnlineContext>().AddDefaultTokenProviders();
             services.AddTransient<ILevelRepositoryAsync, LevelRepositoryAsync>();
-            services.AddSwaggerGen(c =>
-            {
-               c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
-            });
+            services.AddTransient<IClassRepositoryAsync, ClassRepositoryAsync>();
+            services.AddTransient<UserManager<User>, UserManager<User>>();
+            services.AddTransient<SignInManager<User>, SignInManager<User>>();
+            services.AddTransient<IUserService, UserService>(); 
+            services.AddSwaggerExtension(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +57,7 @@ namespace API
             }
 
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
