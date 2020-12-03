@@ -14,7 +14,6 @@ namespace API.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
-    [Authorize]
     public class LevelController : ControllerBase
     {
         private readonly ILevelRepositoryAsync _levelRepositoryAsync;

@@ -1027,14 +1027,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tranthanhtung/Downloads/toeic-develop-api/Domain/Domain.csproj",
+      "projectUniqueName": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "/Users/tranthanhtung/Downloads/toeic-develop-api/Domain/Domain.csproj",
+      "projectPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/Domain.csproj",
       "packagesPath": "/Users/tranthanhtung/.nuget/packages/",
-      "outputPath": "/Users/tranthanhtung/Downloads/toeic-develop-api/Domain/obj/",
+      "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+        "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

@@ -15,13 +15,13 @@ namespace API.Controllers
         {
             _userService = userService;
         }
-        [HttpPost("autheticate")]
+        [HttpPost("authenticate")]
         [AllowAnonymous]
-        public async Task<IActionResult> Autheticate([FromForm]LoginRequest request)
+        public async Task<IActionResult> Authenticate([FromBody]LoginRequest request)
         {
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var resultTokent = await _userService.Autheticate(request);
+            var resultTokent = await _userService.Authenticate(request);
             if(string.IsNullOrEmpty(resultTokent))
             {
                 return BadRequest("Login username or password incorrect");
@@ -31,7 +31,7 @@ namespace API.Controllers
         }
         [HttpPost("register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register([FromForm]RegisterRequest request)
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);

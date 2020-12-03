@@ -5,7 +5,7 @@ namespace Application.System.Users
 {
     public interface IUserService
     {
-         Task<string> Autheticate(LoginRequest request);
+         Task<string> Authenticate(LoginRequest request);
          Task<bool> Register(RegisterRequest register);
     }
 }

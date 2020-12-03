@@ -27,7 +27,7 @@ namespace Application.System.Users
             _roleManager = roleManager;
             _config = config;
         }
-        public async Task<string> Autheticate(LoginRequest request)
+        public async Task<string> Authenticate(LoginRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
             if(user == null) return null;
