@@ -1034,7 +1034,7 @@
       "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
+        "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

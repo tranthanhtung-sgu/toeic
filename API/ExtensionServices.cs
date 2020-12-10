@@ -59,9 +59,9 @@ namespace API
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
                     ValidateIssuer = true,
-                    ValidIssuer = issuer,
+                    ValidIssuer = issuer,   
                     ValidateAudience = true,
-                    ValidAudience = issuer,
+                    ValidAudience = issuer,            
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     ClockSkew = System.TimeSpan.Zero,

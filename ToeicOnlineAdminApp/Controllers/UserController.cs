@@ -1,6 +1,16 @@
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Application.ViewModels.User;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Logging;
+using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Linq;
 using ToeicOnlineAdminApp.Services;
 
 namespace ToeicOnlineAdminApp.Controllers
@@ -8,19 +18,26 @@ namespace ToeicOnlineAdminApp.Controllers
     public class UserController : Controller
     {
         private readonly IUserApiClient _userApiClient;
-        public UserController(IUserApiClient userApiClient)
+        private readonly IConfiguration _configuration;
+        public UserController(IUserApiClient userApiClient, IConfiguration configuration)
         {
             _userApiClient = userApiClient;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-
-        [HttpGet]
-        public IActionResult Login()
+        public async Task<IActionResult> Logout()
         {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "User");
+        }
+        [HttpGet]
+        public async Task<IActionResult> LoginAsync()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return View();
         }
         [HttpPost]
@@ -29,8 +46,31 @@ namespace ToeicOnlineAdminApp.Controllers
             if(!ModelState.IsValid)          
                 return View(ModelState);
             var token = await _userApiClient.Authenticate(request);
-            return View(token);
+            var userPrincipal = this.ValidateToken(token);
+            var authProperties = new AuthenticationProperties
+            {
+                IsPersistent = true,
+                ExpiresUtc = DateTime.Now.AddHours(3)
+            };
+            await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme, 
+                    new ClaimsPrincipal(userPrincipal), 
+                    authProperties);
+            return RedirectToAction("Index","Home");
 
+        }
+        private ClaimsPrincipal ValidateToken(string jwtToken)
+        {
+            dynamic data = JObject.Parse(jwtToken);
+            string token = data.token;
+            SecurityToken validatedToken;
+            TokenValidationParameters validationParameters = new TokenValidationParameters();
+            validationParameters.ValidateLifetime = true;
+            validationParameters.ValidAudience = _configuration["Tokens:Issuer"];
+            validationParameters.ValidIssuer = _configuration["Tokens:Issuer"];
+            validationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Tokens:Key"]));
+            ClaimsPrincipal principal = new JwtSecurityTokenHandler().ValidateToken(token, validationParameters, out validatedToken);
+            return principal;
         }
     }
 }
