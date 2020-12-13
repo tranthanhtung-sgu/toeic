@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using Application.ViewModels.User;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -15,7 +18,7 @@ using ToeicOnlineAdminApp.Services;
 
 namespace ToeicOnlineAdminApp.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private readonly IUserApiClient _userApiClient;
         private readonly IConfiguration _configuration;
@@ -25,52 +28,25 @@ namespace ToeicOnlineAdminApp.Controllers
             _configuration = configuration;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string keyword, int PageIndex = 1, int PageSize = 10)
         {
-            return View();
+            var sessions = HttpContext.Session.GetString("Token");
+            var request = new GetUserPagingRequest()
+            {
+                BeareToken = sessions,
+                KeyWord = keyword,
+                PageIndex = PageIndex,
+                PageSize = PageSize
+            };
+            var data = await _userApiClient.GetUserPaging(request);
+            return View(data);
         }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login", "User");
-        }
-        [HttpGet]
-        public async Task<IActionResult> LoginAsync()
-        {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> Login(LoginRequest request)
-        {
-            if(!ModelState.IsValid)          
-                return View(ModelState);
-            var token = await _userApiClient.Authenticate(request);
-            var userPrincipal = this.ValidateToken(token);
-            var authProperties = new AuthenticationProperties
-            {
-                IsPersistent = true,
-                ExpiresUtc = DateTime.Now.AddHours(3)
-            };
-            await HttpContext.SignInAsync(
-                    CookieAuthenticationDefaults.AuthenticationScheme, 
-                    new ClaimsPrincipal(userPrincipal), 
-                    authProperties);
-            return RedirectToAction("Index","Home");
-
-        }
-        private ClaimsPrincipal ValidateToken(string jwtToken)
-        {
-            dynamic data = JObject.Parse(jwtToken);
-            string token = data.token;
-            SecurityToken validatedToken;
-            TokenValidationParameters validationParameters = new TokenValidationParameters();
-            validationParameters.ValidateLifetime = true;
-            validationParameters.ValidAudience = _configuration["Tokens:Issuer"];
-            validationParameters.ValidIssuer = _configuration["Tokens:Issuer"];
-            validationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Tokens:Key"]));
-            ClaimsPrincipal principal = new JwtSecurityTokenHandler().ValidateToken(token, validationParameters, out validatedToken);
-            return principal;
-        }
+            HttpContext.Session.Remove("Token");
+            return RedirectToAction("Index", "Login");
+        }      
     }
 }

@@ -11,9 +11,7 @@ using ToeicOnlineAdminApp.Models;
 
 namespace ToeicOnlineAdminApp.Controllers
 {
-    [Authorize]
-    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -24,7 +22,6 @@ namespace ToeicOnlineAdminApp.Controllers
 
         public IActionResult Index()
         {
-            var user = User.Identity.Name;
             return View();
         }
 

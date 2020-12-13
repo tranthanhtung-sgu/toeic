@@ -16,6 +16,13 @@ namespace Application.ViewModels.User
             RuleFor(x=>x.Address).NotEmpty().WithMessage("Address cannot empty");
             RuleFor(x=>x.PhoneNumber).MaximumLength(10).WithMessage("This is not a phone number")
             .NotEmpty().WithMessage("Phone number cannot empty");
+            RuleFor(x => x).Custom((x, context) =>
+            {
+                if (x.password != x.ConfirmPassword)
+                {
+                    context.AddFailure(nameof(x.password), "Passwords should match");
+                }
+            });
         }
     }
 }

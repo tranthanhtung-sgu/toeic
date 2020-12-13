@@ -13,5 +13,6 @@ namespace Application.ViewModels.User
         public string PhoneNumber {get; set;}
         public string UserName { get; set; }
         public string password { get; set; }
+        public string ConfirmPassword { get; set; }
     }
 }

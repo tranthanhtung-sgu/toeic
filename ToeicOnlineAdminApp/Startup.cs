@@ -39,13 +39,17 @@ namespace ToeicOnlineAdminApp
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
-                    options.LoginPath = "/User/Login";
+                    options.LoginPath = "/Login/Index";
                     options.AccessDeniedPath = "/User/Forbidden";
                 });    
             services.AddApplicationLayer();
             services.AddTransient<IUserApiClient, UserApiClient>();
             services.AddControllersWithViews().AddFluentValidation();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
         }
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -69,8 +73,8 @@ namespace ToeicOnlineAdminApp
 
             
             app.UseAuthorization();
-            
 
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
