@@ -28,18 +28,67 @@ namespace ToeicOnlineAdminApp.Controllers
             _configuration = configuration;
         }
 
-        public async Task<IActionResult> Index(string keyword, int PageIndex = 1, int PageSize = 10)
+        public async Task<IActionResult> Index(string keyword, int pageIndex = 1, int pageSize = 1)
         {
-            var sessions = HttpContext.Session.GetString("Token");
             var request = new GetUserPagingRequest()
             {
-                BeareToken = sessions,
                 KeyWord = keyword,
-                PageIndex = PageIndex,
-                PageSize = PageSize
+                PageIndex = pageIndex,
+                PageSize = pageSize
             };
             var data = await _userApiClient.GetUserPaging(request);
-            return View(data);
+            ViewBag.Keyword = keyword;
+            if (TempData["result"] != null)
+            {
+                ViewBag.SuccessMsg = TempData["result"];
+            }
+            return View(data.ResultObj);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var result = await _userApiClient.GetById(id);
+            if (result.IsSuccessed)
+            {
+                var user = result.ResultObj;
+                var updateRequest = new UserUpdateRequest()
+                {
+                    Address = user.Address,
+                    birthday = user.birthday,
+                    Email = user.Email,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    PhoneNumber = user.PhoneNumber,
+                    Id = id
+                };
+                return View(updateRequest);
+            }
+            return RedirectToAction("Error", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(UserUpdateRequest request)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            var result = await _userApiClient.UpdateUser(request.Id, request);
+            if (result.IsSuccessed)
+            {
+                TempData["result"] = "Cập nhật người dùng thành công";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", result.Message);
+            return View(request);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var result = await _userApiClient.GetById(id);
+            return View(result.ResultObj);
         }
 
         public async Task<IActionResult> Logout()

@@ -3,11 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Application.ViewModels.User
 {
-    public class UserVm
+    public class UserUpdateRequest
     {
-        public int Id { get; set; }
-
-        [Display(Name = "Tên")]
+        [Display(Name ="Tên")]
         public string FirstName { get; set; }
 
         [Display(Name = "Họ")]
@@ -28,9 +26,6 @@ namespace Application.ViewModels.User
         [DataType(DataType.Date)]
         public DateTime birthday { get; set; }
 
-        [Display(Name = "Tài Khoản")]
-        public string UserName { get; set; }
-
-    
+        public int Id { get; set; }
     }
 }

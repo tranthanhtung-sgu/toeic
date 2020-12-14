@@ -18,33 +18,47 @@
                         <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                             <thead>
                                 <tr>
-                                    <th rowspan="1" colspan="1">First Name</th>
-                                    <th rowspan="1" colspan="1">Last Name</th>
+                                    <th rowspan="1" colspan="1">Tên</th>
+                                    <th rowspan="1" colspan="1">Họ</th>
                                     <th rowspan="1" colspan="1">Email</th>
-                                    <th rowspan="1" colspan="1">Phone</th>
-                                    <th rowspan="1" colspan="1">User Name</th>
-                                    <th rowspan="1" colspan="1">Date of birth</th>
-                                    <th rowspan="1" colspan="1">Address</th>
+                                    <th rowspan="1" colspan="1">Điện thoại</th>
+                                    <th rowspan="1" colspan="1">Tài khoản</th>
+                                    <th rowspan="1" colspan="1">Chức năng</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach(var items in Model.Items )
                                 {
                                 <tr role="row" class="odd">
-                                    <td class="sorting_1">@items.FirstName</td>
-                                    <td>@items.LastName</td>
+                                    <td class="sorting_1">@items.LastName</td>
+                                    <td>@items.FirstName</td>
                                     <td>@items.Email</td>
                                     <td>@items.PhoneNumber</td>
                                     <td>@items.UserName</td>
-                                    <td>@items.Dob</td>
-                                    <td>@items.Address</td>
+                                    <td>
+                                        @Html.ActionLink("Sửa", "Edit", new { id = items.Id }) |
+                                        @Html.ActionLink("Xem", "Details", new { id = items.Id }) |
+                                        @Html.ActionLink("Xóa", "Delete", new { id = items.Id }) |
+                                        @Html.ActionLink("Gán quyền", "RoleAssign", new { id = items.Id })
+                                    </td>
                                 </tr>
                                 }
                                   
                             </tbody>
                         </table>
                     </div>
-                </div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div>
+                </div>
+                <div class="row">
+                <div class="col-sm-12 col-md-5">
+                    <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                    </div>
+                <div class="col-sm-12 col-md-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                        @await Component.InvokeAsync("Pager", Model)
+                    </div>
+                    
+                </div>
+                </div>
             </div>
         </div>
     </div>

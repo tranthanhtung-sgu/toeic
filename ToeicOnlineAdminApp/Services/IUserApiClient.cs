@@ -8,8 +8,10 @@ namespace ToeicOnlineAdminApp.Services
 {
     public interface IUserApiClient
     {
-        Task<string> Authenticate(LoginRequest request);
-        Task<PagedResult<UserVm>> GetUserPaging(GetUserPagingRequest request);
-        Task<bool> RegisterUser(RegisterRequest register);
+        Task<ApiResult<string>> Authenticate(LoginRequest request);
+        Task<ApiResult<PagedResult<UserVm>>> GetUserPaging(GetUserPagingRequest request);
+        Task<ApiResult<bool>> RegisterUser(RegisterRequest register);
+        Task<ApiResult<UserVm>> GetById(int id);
+        Task<ApiResult<bool>> UpdateUser(int id, UserUpdateRequest request);
     }
 }

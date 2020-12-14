@@ -167,4 +167,7 @@
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/net5.0/ToeicOnlineAdminApp.pdb
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/net5.0/ToeicOnlineAdminApp.genruntimeconfig.cache
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/net5.0/Razor/Views/Login/Index.cshtml.g.cs
-/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/net5.0/Razor/Views/Login/SignIn.cshtml.g.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/net5.0/Razor/Views/Login/Register.cshtml.g.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/net5.0/Razor/Views/User/Edit.cshtml.g.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/net5.0/Razor/Views/User/Details.cshtml.g.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/net5.0/Razor/Views/Shared/Components/Pager/Default.cshtml.g.cs

@@ -19,18 +19,18 @@ namespace API.Controllers
         }
         [HttpPost("authenticate")]
         [AllowAnonymous]
-        public async Task<IActionResult> Authenticate([FromBody]LoginRequest request)
+        public async Task<IActionResult> Authenticate([FromBody] LoginRequest request)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var resultTokent = await _userService.Authenticate(request);
 
-            if(string.IsNullOrEmpty(resultTokent))
+            var result = await _userService.Authenticate(request);
+
+            if (string.IsNullOrEmpty(result.ResultObj))
             {
-                return BadRequest("Login username or password incorrect");
+                return BadRequest(result);
             }
-            return Ok(new {token = resultTokent});
-
+            return Ok(result);
         }
         [HttpPost]
         [AllowAnonymous]
@@ -39,7 +39,7 @@ namespace API.Controllers
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
             var result = await _userService.Register(request);
-            if(!result)
+            if(!result.ResultObj)
             {
                 return BadRequest("Register Unsuccessfull");
             }
@@ -51,6 +51,28 @@ namespace API.Controllers
         {
             var users = await _userService.GetUserPaging(request);
             return Ok(users);
+        }
+
+        //PUT: http://localhost/api/users/id
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UserUpdateRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _userService.Update(id, request);
+            if (!result.IsSuccessed)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var user = await _userService.GetById(id);
+            return Ok(user);
         }
 
     }

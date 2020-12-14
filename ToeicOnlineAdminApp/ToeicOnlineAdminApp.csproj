@@ -25,5 +25,7 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Views\Login\" />
+    <Folder Include="Controllers\Components\" />
+    <Folder Include="Views\Shared\Components\" />
   </ItemGroup>
 </Project>

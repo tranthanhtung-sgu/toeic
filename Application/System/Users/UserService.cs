@@ -34,12 +34,16 @@ namespace Application.System.Users
             _config = config;
             _mapper = mapper;
         }
-        public async Task<string> Authenticate(LoginRequest request)
+        public async Task<ApiResult<string>> Authenticate(LoginRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
+            if (user == null) return new ApiErrorResult<string>("Tài khoản không tồn tại");
 
             var result = await _signInManager.PasswordSignInAsync(user, request.password, request.isRememberMe, true);
-
+            if (!result.Succeeded)
+            {
+                return new ApiErrorResult<string>("Đăng nhập không đúng");
+            }
             var roles = await _userManager.GetRolesAsync(user);
             var claims = new[]
             {
@@ -57,10 +61,32 @@ namespace Application.System.Users
                 expires: DateTime.Now.AddHours(3),
                 signingCredentials: creds);
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            return new ApiSuccessResult<string>(new JwtSecurityTokenHandler().WriteToken(token));
         }
 
-        public async Task<PagedResult<UserVm>> GetUserPaging(GetUserPagingRequest request)
+        public async Task<ApiResult<UserVm>> GetById(int id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null)
+            {
+                return new ApiErrorResult<UserVm>("User không tồn tại");
+            }
+            var roles = await _userManager.GetRolesAsync(user);
+            var userVm = new UserVm()
+            {
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                FirstName = user.FirstName,
+                birthday = user.birthday,
+                Id = user.Id,
+                LastName = user.LastName,
+                UserName = user.UserName,
+                Address = user.Address
+            };
+            return new ApiSuccessResult<UserVm>(userVm);
+        }
+
+        public async Task<ApiResult<PagedResult<UserVm>>> GetUserPaging(GetUserPagingRequest request)
         { 
             var query = _userManager.Users;
             if(!string.IsNullOrEmpty(request.KeyWord))
@@ -79,19 +105,36 @@ namespace Application.System.Users
                     PhoneNumber = x.PhoneNumber,
                     UserName = x.UserName,
                     Address = x.Address,
-                    Dob = x.birthday
+                    birthday = x.birthday,
+                    Id = x.Id
                 }).ToListAsync();
             var pagedResult = new PagedResult<UserVm>()
             {
                 TotalRecords = totalRow,
+                PageIndex = request.PageIndex,
+                PageSize = request.PageSize,
                 Items = data
             };
-            return pagedResult;
+            return new ApiSuccessResult<PagedResult<UserVm>>(pagedResult);
         }
 
-        public async Task<bool> Register(RegisterRequest request)
+        public Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request)
         {
-            var user = new User(){
+            throw new NotImplementedException();
+        }
+
+        public async Task<ApiResult<bool>> Register(RegisterRequest request)
+        {
+            var user = await _userManager.FindByNameAsync(request.UserName);
+            if (user != null)
+            {
+                return new ApiErrorResult<bool>("Tài khoản đã tồn tại");
+            }
+            if (await _userManager.FindByEmailAsync(request.Email) != null)
+            {
+                return new ApiErrorResult<bool>("Emai đã tồn tại");
+            }
+                user = new User(){
                 birthday = request.Dob,
                 Address = request.Address,
                 Email = request.Email,
@@ -101,11 +144,32 @@ namespace Application.System.Users
                 UserName =request.UserName
             };
             var result = await _userManager.CreateAsync(user, request.password);
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
-                return true;
+                return new ApiSuccessResult<bool>();
             }
-            return false;
+            return new ApiErrorResult<bool>("Đăng ký không thành công");
+        }
+
+        public async Task<ApiResult<bool>> Update(int id, UserUpdateRequest request)
+        {
+            if (await _userManager.Users.AnyAsync(x => x.Email == request.Email && x.Id != id))
+            {
+                return new ApiErrorResult<bool>("Emai đã tồn tại");
+            }
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            user.birthday = request.birthday;
+            user.Email = request.Email;
+            user.FirstName = request.FirstName;
+            user.LastName = request.LastName;
+            user.PhoneNumber = request.PhoneNumber;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                return new ApiSuccessResult<bool>();
+            }
+            return new ApiErrorResult<bool>("Cập nhật không thành công");
         }
     }
 }

@@ -40,14 +40,14 @@ namespace ToeicOnlineAdminApp.Controllers
         {
             if (!ModelState.IsValid)
                 return View(ModelState);
-            var token = await _userApiClient.Authenticate(request);
-            var userPrincipal = this.ValidateToken(token);
+            var result = await _userApiClient.Authenticate(request);
+            var userPrincipal = this.ValidateToken(result.ResultObj);
             var authProperties = new AuthenticationProperties
             {
                 IsPersistent = false,
                 ExpiresUtc = DateTime.Now.AddHours(3)
             };
-            HttpContext.Session.SetString("Token", token);
+            HttpContext.Session.SetString("Token", result.ResultObj);
             await HttpContext.SignInAsync(
                     CookieAuthenticationDefaults.AuthenticationScheme,
                     new ClaimsPrincipal(userPrincipal),
@@ -56,35 +56,33 @@ namespace ToeicOnlineAdminApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult SignIn()
+        public IActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> SignIn(RegisterRequest request)
+        public async Task<IActionResult> Register(RegisterRequest request)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
             var result = await _userApiClient.RegisterUser(request);
-            if (result)
+            if (result.ResultObj)
                 RedirectToAction("Index");
             return View(request);
         }
 
         private ClaimsPrincipal ValidateToken(string jwtToken)
         {
-            dynamic data = JObject.Parse(jwtToken);
-            string token = data.token;
             SecurityToken validatedToken;
             TokenValidationParameters validationParameters = new TokenValidationParameters();
             validationParameters.ValidateLifetime = true;
             validationParameters.ValidAudience = _configuration["Tokens:Issuer"];
             validationParameters.ValidIssuer = _configuration["Tokens:Issuer"];
             validationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Tokens:Key"]));
-            ClaimsPrincipal principal = new JwtSecurityTokenHandler().ValidateToken(token, validationParameters, out validatedToken);
+            ClaimsPrincipal principal = new JwtSecurityTokenHandler().ValidateToken(jwtToken, validationParameters, out validatedToken);
             return principal;
         }
     }
