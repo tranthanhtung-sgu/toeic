@@ -101,27 +101,30 @@ namespace Application.System.Users
         }
 
         public async Task<ApiResult<PagedResult<UserVm>>> GetUserPaging(GetUserPagingRequest request)
-        { 
+        {
             var query = _userManager.Users;
-            if(!string.IsNullOrEmpty(request.KeyWord))
+            if (!string.IsNullOrEmpty(request.KeyWord))
             {
-                query.Where(x => x.UserName.Contains(request.KeyWord)
-                || x.PhoneNumber.Contains(request.KeyWord));
+                query = query.Where(x => x.UserName.Contains(request.KeyWord)
+                 || x.PhoneNumber.Contains(request.KeyWord));
             }
+
+            //3. Paging
             int totalRow = await query.CountAsync();
+
             var data = await query.Skip((request.PageIndex - 1) * request.PageSize)
                 .Take(request.PageSize)
                 .Select(x => new UserVm()
                 {
                     Email = x.Email,
-                    FirstName = x.FirstName,
-                    LastName = x.LastName,
                     PhoneNumber = x.PhoneNumber,
                     UserName = x.UserName,
-                    Address = x.Address,
-                    birthday = x.birthday,
-                    Id = x.Id
+                    FirstName = x.FirstName,
+                    Id = x.Id,
+                    LastName = x.LastName
                 }).ToListAsync();
+
+            //4. Select and projection
             var pagedResult = new PagedResult<UserVm>()
             {
                 TotalRecords = totalRow,
