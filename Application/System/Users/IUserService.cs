@@ -10,9 +10,7 @@ namespace Application.System.Users
         Task<ApiResult<bool>> Register(RegisterRequest register);
         Task<ApiResult<PagedResult<UserVm>>> GetUserPaging(GetUserPagingRequest request);
         Task<ApiResult<bool>> Update(int id, UserUpdateRequest request);
-
-        Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request);
-
         Task<ApiResult<UserVm>> GetById(int id);
+        Task<ApiResult<bool>> Delete(int id);
     }
 }

@@ -64,6 +64,20 @@ namespace Application.System.Users
             return new ApiSuccessResult<string>(new JwtSecurityTokenHandler().WriteToken(token));
         }
 
+        public async Task<ApiResult<bool>> Delete(int id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null)
+            {
+                return new ApiErrorResult<bool>("User không tồn tại");
+            }
+            var reult = await _userManager.DeleteAsync(user);
+            if (reult.Succeeded)
+                return new ApiSuccessResult<bool>();
+
+            return new ApiErrorResult<bool>("Xóa không thành công");
+        }
+
         public async Task<ApiResult<UserVm>> GetById(int id)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
@@ -116,11 +130,6 @@ namespace Application.System.Users
                 Items = data
             };
             return new ApiSuccessResult<PagedResult<UserVm>>(pagedResult);
-        }
-
-        public Task<ApiResult<PagedResult<UserVm>>> GetUsersPaging(GetUserPagingRequest request)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<ApiResult<bool>> Register(RegisterRequest request)

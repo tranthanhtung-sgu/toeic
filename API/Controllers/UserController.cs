@@ -39,11 +39,11 @@ namespace API.Controllers
             if(!ModelState.IsValid)
                 return BadRequest(ModelState);
             var result = await _userService.Register(request);
-            if(!result.ResultObj)
+            if(!result.IsSuccessed)
             {
                 return BadRequest("Register Unsuccessfull");
             }
-            return Ok();
+            return Ok(result);
         }
         //http:localhost:port/api/user/paging?pageIndex=1&pageSize=1&keyWord=
         [HttpGet("paging")]
@@ -68,6 +68,20 @@ namespace API.Controllers
             return Ok(result);
         }
 
+        //[HttpPut("{id}/roles")]
+        //public async Task<IActionResult> RoleAssign(Guid id, [FromBody] RoleAssignRequest request)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
+
+        //    var result = await _userService.RoleAssign(id, request);
+        //    if (!result.IsSuccessed)
+        //    {
+        //        return BadRequest(result);
+        //    }
+        //    return Ok(result);
+        //}
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -75,5 +89,11 @@ namespace API.Controllers
             return Ok(user);
         }
 
+        [HttpDelete("{deleteId}")]
+        public async Task<IActionResult> Delete(int deleteId)
+        {
+            var result = await _userService.Delete(deleteId);
+            return Ok(result);
+        }
     }
 }

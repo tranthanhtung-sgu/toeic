@@ -13,5 +13,6 @@ namespace ToeicOnlineAdminApp.Services
         Task<ApiResult<bool>> RegisterUser(RegisterRequest register);
         Task<ApiResult<UserVm>> GetById(int id);
         Task<ApiResult<bool>> UpdateUser(int id, UserUpdateRequest request);
+        Task<ApiResult<bool>> Delete(int id);
     }
 }

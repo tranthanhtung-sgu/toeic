@@ -91,11 +91,42 @@ namespace ToeicOnlineAdminApp.Controllers
             return View(result.ResultObj);
         }
 
+
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var userDelete = await _userApiClient.GetById(id);
+            return View(new UserDeleteRequest()
+            {
+                Id = id,
+                UserName = userDelete.ResultObj.UserName
+            }) ;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(UserDeleteRequest request)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            var result = await _userApiClient.Delete(request.Id);
+            if (result.IsSuccessed)
+            {
+                TempData["result"] = "Xóa người dùng thành công";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", result.Message);
+            return View(request);
+        }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             HttpContext.Session.Remove("Token");
             return RedirectToAction("Index", "Login");
-        }      
+        }
+        
     }
 }

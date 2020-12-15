@@ -42,7 +42,7 @@ namespace API
             services.AddTransient<IClassRepositoryAsync, ClassRepositoryAsync>();
             services.AddTransient<UserManager<User>, UserManager<User>>();
             services.AddTransient<SignInManager<User>, SignInManager<User>>();
-            services.AddTransient<IUserService, UserService>(); 
+            services.AddTransient<IUserService, UserService>();
             services.AddSwaggerExtension(Configuration);
         }
 
