@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using FluentValidation.AspNetCore;
 using Application;
+using Application.System.Roles;
 
 namespace API
 {
@@ -35,14 +36,24 @@ namespace API
             services.AddControllers().AddFluentValidation();
             services.AddDbContext<ToeicOnlineContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext"),
-                b => b.MigrationsAssembly("Infrastructure")));            
+                b => b.MigrationsAssembly("Infrastructure")));
             //DI
             services.AddIdentity<User, Role>().AddEntityFrameworkStores<ToeicOnlineContext>().AddDefaultTokenProviders();
-            services.AddTransient<ILevelRepositoryAsync, LevelRepositoryAsync>();
-            services.AddTransient<IClassRepositoryAsync, ClassRepositoryAsync>();
+            //services.AddDefaultIdentity<User>()
+            //   .AddRoles<Role>() // <-- Add this line
+            //    .AddEntityFrameworkStores<ToeicOnlineContext>();
+            services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory<User, Role>>();
             services.AddTransient<UserManager<User>, UserManager<User>>();
             services.AddTransient<SignInManager<User>, SignInManager<User>>();
+            services.AddTransient<RoleManager<Role>, RoleManager<Role>>();
+
+            services.AddTransient<ILevelRepositoryAsync, LevelRepositoryAsync>();
+            services.AddTransient<IClassRepositoryAsync, ClassRepositoryAsync>();
+
+            
+
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRoleService, RoleService>();
             services.AddSwaggerExtension(Configuration);
         }
 

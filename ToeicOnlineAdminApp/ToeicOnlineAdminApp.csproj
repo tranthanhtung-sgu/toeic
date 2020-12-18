@@ -27,5 +27,7 @@
     <Folder Include="Views\Login\" />
     <Folder Include="Controllers\Components\" />
     <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Services\User\" />
+    <Folder Include="Services\Role\" />
   </ItemGroup>
 </Project>

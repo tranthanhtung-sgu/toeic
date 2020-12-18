@@ -68,19 +68,19 @@ namespace API.Controllers
             return Ok(result);
         }
 
-        //[HttpPut("{id}/roles")]
-        //public async Task<IActionResult> RoleAssign(Guid id, [FromBody] RoleAssignRequest request)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return BadRequest(ModelState);
+        [HttpPut("{id}/roles")]
+        public async Task<IActionResult> RoleAssign(int id, [FromBody] RoleAssignRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-        //    var result = await _userService.RoleAssign(id, request);
-        //    if (!result.IsSuccessed)
-        //    {
-        //        return BadRequest(result);
-        //    }
-        //    return Ok(result);
-        //}
+            var result = await _userService.RoleAssign(id, request);
+            if (!result.IsSuccessed)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)

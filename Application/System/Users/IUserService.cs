@@ -12,5 +12,6 @@ namespace Application.System.Users
         Task<ApiResult<bool>> Update(int id, UserUpdateRequest request);
         Task<ApiResult<UserVm>> GetById(int id);
         Task<ApiResult<bool>> Delete(int id);
+        Task<ApiResult<bool>> RoleAssign(int id, RoleAssignRequest request);
     }
 }

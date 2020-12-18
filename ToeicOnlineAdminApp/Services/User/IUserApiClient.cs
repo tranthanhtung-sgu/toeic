@@ -4,7 +4,7 @@ using Application.ViewModels.Common;
 using Application.ViewModels.User;
 
 
-namespace ToeicOnlineAdminApp.Services
+namespace ToeicOnlineAdminApp.Services.User
 {
     public interface IUserApiClient
     {
@@ -14,5 +14,6 @@ namespace ToeicOnlineAdminApp.Services
         Task<ApiResult<UserVm>> GetById(int id);
         Task<ApiResult<bool>> UpdateUser(int id, UserUpdateRequest request);
         Task<ApiResult<bool>> Delete(int id);
+        Task<ApiResult<bool>> RoleAssign(int id, RoleAssignRequest request);
     }
 }

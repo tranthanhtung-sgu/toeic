@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace ToeicOnlineAdminApp.Services
+namespace ToeicOnlineAdminApp.Services.User
 {
     public class UserApiClient : IUserApiClient
     {
@@ -126,6 +126,28 @@ namespace ToeicOnlineAdminApp.Services
                 return JsonConvert.DeserializeObject<ApiSuccessResult<bool>>(body);
 
             return JsonConvert.DeserializeObject<ApiErrorResult<bool>>(body);
+        }
+
+        public async Task<ApiResult<bool>> RoleAssign(int id, RoleAssignRequest request)
+        {
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            HttpClient client = new HttpClient(clientHandler);
+            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+
+            var sessions = _httpContextAccessor.HttpContext.Session.GetString("Token");
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", sessions);
+
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PutAsync($"/api/user/{id}/roles", httpContent);
+            var result = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<ApiSuccessResult<bool>>(result);
+
+            return JsonConvert.DeserializeObject<ApiErrorResult<bool>>(result);
         }
     }
 }

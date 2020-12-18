@@ -6216,7 +6216,6 @@
       "FluentValidation >= 9.3.0",
       "MediatR >= 9.0.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 9.0.0",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.InMemory >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Relational >= 5.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0",
@@ -6237,7 +6236,7 @@
       "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+        "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6283,10 +6282,6 @@
           "MediatR.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[9.0.0, )"
-          },
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[5.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",

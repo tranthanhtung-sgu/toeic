@@ -21,10 +21,10 @@ namespace Infrastructure.Persistence
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new LevelConfiguration());
             
-            modelBuilder.Entity<IdentityUserClaim<int>>().ToTable("UserClaims").HasKey(x=>x.UserId);
+            modelBuilder.Entity<IdentityUserClaim<int>>().ToTable("UserClaims");
             modelBuilder.Entity<IdentityUserRole<int>>().ToTable("UserRoles").HasKey(x=> new {x.RoleId, x.UserId});
             modelBuilder.Entity<IdentityUserLogin<int>>().ToTable("UserLogins").HasKey(x=>x.UserId);
-            modelBuilder.Entity<IdentityRoleClaim<int>>().ToTable("RoleClaims").HasKey(x=>x.RoleId);
+            modelBuilder.Entity<IdentityRoleClaim<int>>().ToTable("RoleClaims");
             modelBuilder.Entity<IdentityUserToken<int>>().ToTable("UserTokens").HasKey(x=>x.UserId);
             
 

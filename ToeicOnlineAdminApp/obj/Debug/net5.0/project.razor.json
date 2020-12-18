@@ -13550,6 +13550,38 @@
         }
       },
       {
+        "HashCode": -1458063778,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__PagerViewComponentTagHelper",
+        "AssemblyName": "ToeicOnlineAdminApp",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:pager",
+            "Attributes": [
+              {
+                "Name": "result"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "result",
+            "TypeName": "Application.ViewModels.Common.PagedResultBase",
+            "Metadata": {
+              "Common.PropertyName": "result"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__PagerViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "Pager"
+        }
+      },
+      {
         "HashCode": 899238057,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -15613,8 +15645,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/User/Delete.cshtml",
+      "TargetPath": "Views\\User\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/User/RoleAssign.cshtml",
+      "TargetPath": "Views\\User\\RoleAssign.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15623,13 +15665,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/User/Details.cshtml",
+      "TargetPath": "Views\\User\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/User/Login.cshtml",
-      "TargetPath": "Views\\User\\Login.cshtml",
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/User/Index.cshtml",
+      "TargetPath": "Views\\User\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15640,6 +15687,26 @@
     {
       "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Login/Register.cshtml",
+      "TargetPath": "Views\\Login\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/User/Edit.cshtml",
+      "TargetPath": "Views\\User\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Login/Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Shared/Components/Pager/Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\Pager\\Default.cshtml",
       "FileKind": "mvc"
     }
   ],

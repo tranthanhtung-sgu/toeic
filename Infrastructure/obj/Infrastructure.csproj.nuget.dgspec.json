@@ -14,7 +14,7 @@
         "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+          "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -104,7 +104,7 @@
         "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+          "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -178,7 +178,7 @@
         "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+          "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -224,10 +224,6 @@
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[9.0.0, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",

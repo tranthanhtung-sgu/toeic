@@ -13,7 +13,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ToeicOnlineAdminApp.Services;
+using ToeicOnlineAdminApp.Services.Role;
+using ToeicOnlineAdminApp.Services.User;
 
 namespace ToeicOnlineAdminApp
 {
@@ -46,6 +47,7 @@ namespace ToeicOnlineAdminApp
             services.AddApplicationLayer();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IUserApiClient, UserApiClient>();
+            services.AddTransient<IRoleApiClient, RoleApiClient>();
             services.AddControllersWithViews().AddFluentValidation();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);

@@ -144,3 +144,11 @@
 /Users/tranthanhtung/Documents/GitHub/toeic/API/obj/Debug/net5.0/ref/API.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/API/obj/Debug/net5.0/API.pdb
 /Users/tranthanhtung/Documents/GitHub/toeic/API/obj/Debug/net5.0/API.genruntimeconfig.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/API.StaticWebAssets.xml
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.UI.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Extensions.Identity.Core.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll

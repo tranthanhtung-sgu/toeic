@@ -87,7 +87,8 @@
                                             @Html.ActionLink("Sửa", "Edit", new { id = items.Id }) |
                                             @Html.ActionLink("Xem", "Details", new { id = items.Id }) |
                                             <a href="/User/Delete/@items.Id"> Delete </a> |
-                                            @Html.ActionLink("Gán quyền", "RoleAssign", new { id = items.Id })
+                                            <a href="/User/RoleAssign/@items.Id"> Role Assign </a>
+                                            @*@Html.ActionLink("Gán quyền", "RoleAssign", new { id = items.Id })*@
                                         </td>
                                     </tr>
                                 }
