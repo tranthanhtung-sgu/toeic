@@ -1,4 +1,4 @@
-using Application.Interfaces;
+ using Application.Interfaces;
 using Application.Interfaces.Repositories;
 using Application.System.Users;
 using AutoMapper;
@@ -31,14 +31,18 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ToeicOnlineContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext")));
             services.AddApplicationLayer();
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers().AddFluentValidation();
-            services.AddDbContext<ToeicOnlineContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext"),
-                b => b.MigrationsAssembly("Infrastructure")));
+            // services.AddDbContext<ToeicOnlineContext>(options =>
+            //     options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext"),
+            //     b => b.MigrationsAssembly("Infrastructure")));
             //DI
-            services.AddIdentity<User, Role>().AddEntityFrameworkStores<ToeicOnlineContext>().AddDefaultTokenProviders();
+            services.AddIdentity<User, Role>()
+                .AddEntityFrameworkStores<ToeicOnlineContext>()
+                .AddDefaultTokenProviders();
             //services.AddDefaultIdentity<User>()
             //   .AddRoles<Role>() // <-- Add this line
             //    .AddEntityFrameworkStores<ToeicOnlineContext>();

@@ -1,0 +1,17 @@
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/Debug/netcoreapp3.1/Infrastructure.csprojAssemblyReference.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/Debug/netcoreapp3.1/Infrastructure.AssemblyInfoInputs.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/Debug/netcoreapp3.1/Infrastructure.AssemblyInfo.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/Debug/netcoreapp3.1/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Infrastructure.deps.json
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Infrastructure.runtimeconfig.json
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Infrastructure.runtimeconfig.dev.json
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Infrastructure.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Infrastructure.pdb
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Application.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Domain.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Domain.pdb
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/bin/Debug/netcoreapp3.1/Application.pdb
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/Debug/netcoreapp3.1/Infrastructure.csproj.CopyComplete
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/Debug/netcoreapp3.1/Infrastructure.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/Debug/netcoreapp3.1/Infrastructure.pdb
+/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/Debug/netcoreapp3.1/Infrastructure.genruntimeconfig.cache

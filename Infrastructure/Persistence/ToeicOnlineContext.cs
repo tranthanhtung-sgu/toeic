@@ -22,7 +22,7 @@ namespace Infrastructure.Persistence
             modelBuilder.ApplyConfiguration(new LevelConfiguration());
             
             modelBuilder.Entity<IdentityUserClaim<int>>().ToTable("UserClaims");
-            modelBuilder.Entity<IdentityUserRole<int>>().ToTable("UserRoles").HasKey(x=> new {x.RoleId, x.UserId});
+            modelBuilder.Entity<IdentityUserRole<int>>().ToTable("UserRoles").HasKey(x=> new {x.UserId, x.RoleId});
             modelBuilder.Entity<IdentityUserLogin<int>>().ToTable("UserLogins").HasKey(x=>x.UserId);
             modelBuilder.Entity<IdentityRoleClaim<int>>().ToTable("RoleClaims");
             modelBuilder.Entity<IdentityUserToken<int>>().ToTable("UserTokens").HasKey(x=>x.UserId);

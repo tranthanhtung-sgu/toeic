@@ -25,4 +25,5 @@ namespace mvcMovie
                     webBuilder.UseStartup<Startup>();
                 });
     }
+
 }

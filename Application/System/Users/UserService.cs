@@ -169,20 +169,9 @@ namespace Application.System.Users
         public async Task<ApiResult<bool>> RoleAssign(int id, RoleAssignRequest request)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
-            var roles = await _userManager.GetRolesAsync(user);
-
-            var test = await _userManager.IsInRoleAsync(user, "Admin");
-            var listRole = await _roleManager.FindByNameAsync("Admin");
             if (user == null)
             {
                 return new ApiErrorResult<bool>("Tài khoản không tồn tại");
-            }
-            if (roles.Contains("Admin"))
-            {
-                foreach (var r in roles)
-                {
-                    var checkDelete = await _userManager.RemoveFromRoleAsync(user, r);
-                }
             }
             var removedRoles = request.Roles.Where(x => x.Selected == false).Select(x => x.Name).ToList();
             foreach (var roleName in removedRoles)
@@ -192,16 +181,12 @@ namespace Application.System.Users
                     await _userManager.RemoveFromRoleAsync(user, roleName);
                 }
             }
-            await _userManager.RemoveFromRolesAsync(user, roles);
-
             var addedRoles = request.Roles.Where(x => x.Selected).Select(x => x.Name).ToList();
             foreach (var roleName in addedRoles)
             {
                 if (await _userManager.IsInRoleAsync(user, roleName) == false)
                 {
-                    var checkAdd = await _userManager.AddToRoleAsync(user, roleName);
-                    var checkRemove = await _userManager.RemoveFromRoleAsync(user, roleName);
-
+                    await _userManager.AddToRoleAsync(user, roleName);
                 }
             }
 

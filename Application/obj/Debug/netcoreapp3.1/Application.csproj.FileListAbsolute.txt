@@ -1,0 +1,12 @@
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/bin/Debug/netcoreapp3.1/Application.deps.json
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/bin/Debug/netcoreapp3.1/Application.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/bin/Debug/netcoreapp3.1/Application.pdb
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/bin/Debug/netcoreapp3.1/Domain.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/bin/Debug/netcoreapp3.1/Domain.pdb
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/Debug/netcoreapp3.1/Application.csprojAssemblyReference.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/Debug/netcoreapp3.1/Application.AssemblyInfoInputs.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/Debug/netcoreapp3.1/Application.AssemblyInfo.cs
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/Debug/netcoreapp3.1/Application.csproj.CoreCompileInputs.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/Debug/netcoreapp3.1/Application.csproj.CopyComplete
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/Debug/netcoreapp3.1/Application.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/Application/obj/Debug/netcoreapp3.1/Application.pdb

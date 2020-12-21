@@ -29,12 +29,14 @@ namespace mvcMovie
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ToeicOnlineContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext")));
             services.AddApplicationLayer();
             services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews().AddFluentValidation();
-            services.AddDbContext<ToeicOnlineContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext"),
-                b => b.MigrationsAssembly("Infrastructure")));
+            // services.AddDbContext<ToeicOnlineContext>(options =>
+            //     options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext"),
+            //     b => b.MigrationsAssembly("Infrastructure")));
             services.AddIdentity<User, Role>().AddEntityFrameworkStores<ToeicOnlineContext>().AddDefaultTokenProviders();
             services.AddApiVersioning();
             services.AddTransient<ILevelRepositoryAsync, LevelRepositoryAsync>();

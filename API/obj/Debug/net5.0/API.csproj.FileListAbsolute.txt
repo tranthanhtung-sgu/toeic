@@ -93,7 +93,6 @@
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Data.SqlClient.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
-/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.SqlServer.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Identity.Client.dll
@@ -152,3 +151,4 @@
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Extensions.FileProviders.Embedded.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Extensions.Identity.Core.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/tranthanhtung/Documents/GitHub/toeic/API/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
