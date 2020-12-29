@@ -14459,6 +14459,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Lesson/Index.cshtml",
+      "TargetPath": "Views\\Lesson\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"

@@ -1,12 +1,11 @@
-using System;
-using System.Threading.Tasks;
 using Application.Interfaces.Repositories;
-using Application.ViewModels.Class;
-using AutoMapper;
-using Domain.Models;
-using Infrastructure.Persistence;
 using Infrastructure.Persistence.Repository;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using Infrastructure.Persistence;
+using System.Threading.Tasks;
+using Application.ViewModels.Class;
 
 namespace Infrastructure.Repositories
 {
@@ -29,7 +28,7 @@ namespace Infrastructure.Repositories
 
         public async Task UpdateClass(int Id, ClassCreateModel classCreateModel)
         {
-            var lophoc = _mapper.Map<Class>(classCreateModel);
+            var lophoc = _mapper.Map<Category>(classCreateModel);
             var result = await GetByIdAsync(Id);
             result.name = classCreateModel.name;
             result.price = classCreateModel.price;

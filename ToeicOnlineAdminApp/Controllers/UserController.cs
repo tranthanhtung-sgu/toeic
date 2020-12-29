@@ -34,7 +34,7 @@ namespace ToeicOnlineAdminApp.Controllers
             _configuration = configuration;
             _roleApiClient = roleApiClient;
         }
-
+        [HttpGet]
         public async Task<IActionResult> Index(string keyword, int pageIndex = 1, int pageSize = 5)
         {
             var request = new GetUserPagingRequest()
@@ -169,22 +169,6 @@ namespace ToeicOnlineAdminApp.Controllers
                     Selected = userObj.ResultObj.Roles.Contains(role.Name)
                 });
             }
-            //foreach (var role in roleObj.ResultObj)
-            //{
-            //    var check = false;
-            //    roleAssignRequest.Id = id;
-            //    if (userObj.ResultObj.Roles != null &&
-            //        userObj.ResultObj.Roles.Contains(role.Name) == true)
-            //    {
-            //        check = true;
-            //    }
-            //    roleAssignRequest.Roles.Add(new SelectItem()
-            //    {
-            //        Id = role.Id,
-            //        Name = role.Name,
-            //        Selected = check
-            //    });
-            //}
             return roleAssignRequest;
         }
 

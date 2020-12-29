@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <Folder Include="ViewModels\Common\" />
+    <Folder Include="ViewModels\Lessons\" />
+    <Folder Include="ViewModels\Category\" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>

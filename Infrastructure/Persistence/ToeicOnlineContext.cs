@@ -20,6 +20,7 @@ namespace Infrastructure.Persistence
             modelBuilder.ApplyConfiguration(new TeacherConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new LevelConfiguration());
+
             
             modelBuilder.Entity<IdentityUserClaim<int>>().ToTable("UserClaims");
             modelBuilder.Entity<IdentityUserRole<int>>().ToTable("UserRoles").HasKey(x=> new {x.UserId, x.RoleId});
@@ -35,12 +36,14 @@ namespace Infrastructure.Persistence
             : base(options)
         {
         }
-        public DbSet<Class> Class { get; set; }
+        public DbSet<Category> Class { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Course> Course { get; set; }
         public DbSet<Level> Level { get; set; }
         public DbSet<Payment> Payment { get; set; }
         public DbSet<Student> Student { get; set; }
         public DbSet<Teacher> Teacher { get; set; }
+        public DbSet<GuideLine> GuideLine { get; set; }
+        public DbSet<Testing> Testing { get; set; }
     }
 }

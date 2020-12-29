@@ -16,6 +16,7 @@ using Microsoft.OpenApi.Models;
 using FluentValidation.AspNetCore;
 using Application;
 using Application.System.Roles;
+using Infrastructure.Persistence.Repository;
 
 namespace API
 {
@@ -35,17 +36,11 @@ namespace API
                 options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext")));
             services.AddApplicationLayer();
             services.AddAutoMapper(typeof(Startup));
-            services.AddControllers().AddFluentValidation();
-            // services.AddDbContext<ToeicOnlineContext>(options =>
-            //     options.UseSqlServer(Configuration.GetConnectionString("MvcToeicContext"),
-            //     b => b.MigrationsAssembly("Infrastructure")));
+         
             //DI
             services.AddIdentity<User, Role>()
                 .AddEntityFrameworkStores<ToeicOnlineContext>()
-                .AddDefaultTokenProviders();
-            //services.AddDefaultIdentity<User>()
-            //   .AddRoles<Role>() // <-- Add this line
-            //    .AddEntityFrameworkStores<ToeicOnlineContext>();
+                .AddDefaultTokenProviders();;
             services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory<User, Role>>();
             services.AddTransient<UserManager<User>, UserManager<User>>();
             services.AddTransient<SignInManager<User>, SignInManager<User>>();
@@ -53,11 +48,12 @@ namespace API
 
             services.AddTransient<ILevelRepositoryAsync, LevelRepositoryAsync>();
             services.AddTransient<IClassRepositoryAsync, ClassRepositoryAsync>();
-
-            
-
+            services.AddTransient<ILessonService, LessonService>();
+            services.AddTransient<ICategoryRepositoryAsync, CategoryRepositoryAsync>();
+            services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();
+            services.AddControllers().AddFluentValidation();
             services.AddSwaggerExtension(Configuration);
         }
 

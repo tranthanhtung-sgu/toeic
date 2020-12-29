@@ -67,7 +67,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Người dùng</h6>
-                        <a class="collapse-item" href="/user/index">Quản lý người dùng</a>
+                        <a class="collapse-item" asp-controller="User" asp-action="Index">Quản lý người dùng</a>
                         <a class="collapse-item" href="cards.html">Cards</a>
                     </div>
                 </div>
@@ -78,19 +78,21 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Giáo Viên</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <h6 class="collapse-header">Lesson</h6>
+                        <a class="collapse-item" asp-action="Index" asp-controller="Lesson">Reading</a>
+                        <a class="collapse-item" href="/Lesson/Index">Listening</a>
+                        <a class="collapse-item" href="/Teacher/Speaking">Speaking</a>
+                        <a class="collapse-item" href="/Teacher/Writting">writting</a>
+                        <a class="collapse-item" href="/Teacher/Test">Testing</a>
                     </div>
                 </div>
             </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
 
             <!-- Divider -->
             <hr class="sidebar-divider">

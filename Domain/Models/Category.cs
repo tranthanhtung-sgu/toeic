@@ -7,5 +7,7 @@ namespace Domain.Models
         public int Id { get; set; }
         public string name { get; set; }
         public List<Course> courses { get; set; }
+        public List<GuideLine> guideLines { get; set; }
+        public List<Testing> testings { get; set; }
     }
 }

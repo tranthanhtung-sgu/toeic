@@ -5,6 +5,6 @@ namespace Domain.Interfaces
 {
     public interface ILevelRepository
     {
-         IEnumerable<Class> GetClasses();  
+         IEnumerable<Category> GetClasses();  
     }
 }

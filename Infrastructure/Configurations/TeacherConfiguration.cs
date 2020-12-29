@@ -11,6 +11,7 @@ namespace Infrastructure.Configuration
             builder.ToTable("Teachers");
             builder.Property(x=>x.description).IsRequired(false);
             builder.Property(x=>x.photo).IsRequired();
+
         }
     }
 }

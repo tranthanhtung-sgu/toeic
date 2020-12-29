@@ -9,5 +9,7 @@ namespace Domain.Models
         public string description { get; set; }
         public string photo { get; set; }
         public List<Class> Classes { get; set; }
+        public List<Testing> Testings { get; set; }
+        public List<GuideLine> guideLines { get; set; }
     }
 }

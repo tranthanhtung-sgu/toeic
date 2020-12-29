@@ -17,8 +17,8 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         public ClassController(IClassRepositoryAsync classRepositoryAsync, IMapper mapper)
         {
-            this._classRepositoryAsync = classRepositoryAsync;
-            this._mapper = mapper;
+            _classRepositoryAsync = classRepositoryAsync;
+            _mapper = mapper;
         }
         [HttpPost]
         public async Task<IActionResult> Create([FromForm] ClassCreateModel request)

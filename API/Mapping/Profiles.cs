@@ -1,4 +1,5 @@
 using Application.ViewModels.Class;
+using Application.ViewModels.Lessons;
 using Application.ViewModels.Level;
 using AutoMapper;
 using Domain.Models;
@@ -11,8 +12,10 @@ namespace API.Mapping
         {
             CreateMap<LevelViewModel, Level>();
             CreateMap<LevelViewModel, Level>().ReverseMap();
-            CreateMap<ClassCreateModel, Class>();
-            CreateMap<ClassCreateModel, Class>().ReverseMap();
+            CreateMap<ClassCreateModel, Category>();
+            CreateMap<ClassCreateModel, Category>().ReverseMap();
+            CreateMap<LessonVm, GuideLine>();
+            CreateMap<LessonVm, GuideLine>().ReverseMap(); ;
         }
     }
 }

@@ -5,8 +5,10 @@ namespace Domain.Models
     public class Level
     {
         public int Id { get; set; }
-        public char sign { get; set; }
+        public string sign { get; set; }
         public string name { get; set; }
         public List<Course> courses { get; set; }
+        public List<GuideLine> guideLines { get; set; }
+        public List<Testing> testings { get; set; }
     }
 }

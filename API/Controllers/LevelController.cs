@@ -20,8 +20,8 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         public LevelController(ILevelRepositoryAsync levelRepositoryAsync, IMapper mapper)
         {
-            this._levelRepositoryAsync = levelRepositoryAsync;
-            this._mapper = mapper;
+            _levelRepositoryAsync = levelRepositoryAsync;
+            _mapper = mapper;
         }
         [HttpGet]
         public async Task<IActionResult> Get()

@@ -11,6 +11,7 @@ namespace Infrastructure.Configuration
         {
             builder.ToTable("Levels");
             builder.HasKey(x=>x.Id);
+            builder.Property(x => x.sign).HasMaxLength(15);
             builder.Property(x=>x.name).IsRequired();
         }
     }
