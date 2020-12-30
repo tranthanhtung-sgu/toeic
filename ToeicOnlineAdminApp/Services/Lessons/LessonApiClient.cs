@@ -13,6 +13,12 @@ namespace ToeicOnlineAdminApp.Services.Lessons
             IConfiguration configuration) : base (httpContextAccessor, configuration)
         {  
         }
+
+        public Task<ApiResult<bool>> CreateLesson(CreateLessonRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ApiResult<PagedResult<LessonVm>>> GetLessonPaging(GetLessonsRequest request)
         {
             var data = await GetAsync<ApiResult<PagedResult<LessonVm>>> (

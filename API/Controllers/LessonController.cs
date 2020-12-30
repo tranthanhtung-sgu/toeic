@@ -28,5 +28,32 @@ namespace API.Controllers
             var lessons = await _lessonService.GetGuidelinesPaging(request);
             return Ok(lessons);
         }
+
+        [HttpPost]
+        [Consumes("multipart/form-data")]
+        [Authorize]
+        public async Task<IActionResult> Create([FromForm] CreateLessonRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var result = await _lessonService.CreateLesson(request);
+            if (result.ResultObj == 0)
+                return BadRequest();
+
+            var lesson = await _lessonService.GetById(result.ResultObj);
+
+            return CreatedAtAction(nameof(GetById), new { id = result.ResultObj }, lesson);
+        }
+
+        [HttpGet("{lessonId}")]
+        public async Task<IActionResult> GetById(int lessonId)
+        {
+            var lesson = await _lessonService.GetById(lessonId);
+            if (lesson == null)
+                return BadRequest("Cannot find Lesson");
+            return Ok(lesson);
+        }
     }
 }

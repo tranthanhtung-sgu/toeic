@@ -17,6 +17,8 @@ using FluentValidation.AspNetCore;
 using Application;
 using Application.System.Roles;
 using Infrastructure.Persistence.Repository;
+using Application.System.Common;
+using System.IO;
 
 namespace API
 {
@@ -40,8 +42,9 @@ namespace API
             //DI
             services.AddIdentity<User, Role>()
                 .AddEntityFrameworkStores<ToeicOnlineContext>()
-                .AddDefaultTokenProviders();;
-            services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory<User, Role>>();
+                .AddDefaultTokenProviders();
+
+            services.AddTransient<IStorageService, FileStorageService>();
             services.AddTransient<UserManager<User>, UserManager<User>>();
             services.AddTransient<SignInManager<User>, SignInManager<User>>();
             services.AddTransient<RoleManager<Role>, RoleManager<Role>>();
@@ -66,6 +69,9 @@ namespace API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
+            // WebRootPath == null workaround.
+            if (string.IsNullOrWhiteSpace(env.WebRootPath))
+                env.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
 
             app.UseHttpsRedirection();
             app.UseAuthentication();

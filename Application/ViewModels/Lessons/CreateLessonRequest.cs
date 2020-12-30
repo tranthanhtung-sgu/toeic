@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AspNetCore.Http;
+
 namespace Application.ViewModels.Lessons
 {
     public class CreateLessonRequest
@@ -13,5 +15,6 @@ namespace Application.ViewModels.Lessons
         public string Level { get; set; }
         public int categoryId { get; set; }
         public string CategoryName { get; set; }
+        public IFormFile ThumbnailsImage { get; set; }
     }
 }

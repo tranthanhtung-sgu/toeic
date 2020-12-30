@@ -14,13 +14,13 @@ using Application.ViewModels.Common;
 
 namespace ToeicOnlineAdminApp.Controllers
 {
-    public class LessonController : BaseController
+    public class LessonsController : BaseController
     {
         private readonly IConfiguration _configuration;
         private readonly ILessonApiClient _apiLessonClient;
         private readonly ICategoryApiClient _categoryApiClient;
         private readonly ILevelApiClient _levelApiClient;
-        public LessonController(IConfiguration configuration,
+        public LessonsController(IConfiguration configuration,
             ILessonApiClient apiLessonClient,
             ICategoryApiClient categoryApiClient)
         {

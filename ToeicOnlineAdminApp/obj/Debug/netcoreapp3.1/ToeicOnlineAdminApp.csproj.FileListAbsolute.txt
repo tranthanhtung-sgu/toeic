@@ -165,7 +165,6 @@
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/ToeicOnlineAdminApp.RazorCoreGenerate.cache
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/Index.cshtml.g.cs
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/Privacy.cshtml.g.cs
-/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/Razor/Views/Lesson/Index.cshtml.g.cs
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/Razor/Views/Login/Index.cshtml.g.cs
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/Razor/Views/Login/Register.cshtml.g.cs
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Components/Pager/Default.cshtml.g.cs
@@ -186,3 +185,4 @@
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/ToeicOnlineAdminApp.dll
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/ToeicOnlineAdminApp.pdb
 /Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/ToeicOnlineAdminApp.genruntimeconfig.cache
+/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/obj/Debug/netcoreapp3.1/Razor/Views/Lessons/Index.cshtml.g.cs

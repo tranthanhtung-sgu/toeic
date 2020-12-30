@@ -6264,7 +6264,7 @@
       "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/Infrastructure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
+        "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

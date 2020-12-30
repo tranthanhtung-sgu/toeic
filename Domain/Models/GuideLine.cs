@@ -15,5 +15,6 @@ namespace Domain.Models
         public int TeacherId { get; set; }
         public Category Category { get; set; }
         public int categoryId { get; set; }
+        public List<GuideLineImage> images { get; set; }
     }
 }

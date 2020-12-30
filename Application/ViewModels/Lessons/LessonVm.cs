@@ -10,6 +10,8 @@ namespace Application.ViewModels.Lessons
         public string TeacherName { get; set; }
         public string Level { get; set; }
         public string CategoryName { get; set; }
+        public string ThumbnailImage { get; set; }
+
 
     }
 }

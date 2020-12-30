@@ -8,7 +8,8 @@ namespace Application.Interfaces.Repositories
   public interface ILessonService : IGenericRepositoryAsync<GuideLine>
   {
         Task<ApiResult<PagedResult<LessonVm>>> GetGuidelinesPaging(GetLessonsRequest request);
-        //Task<ApiResult<bool>> CreateLesson(CreateLessonRequest register);
+        Task<ApiResult<int>> CreateLesson(CreateLessonRequest request);
+        Task<LessonVm> GetById(int lessonId);
         //Task<ApiResult<bool>> Update(int id, UserUpdateRequest request);
         //Task<ApiResult<UserVm>> GetById(int id);
         //Task<ApiResult<bool>> Delete(int id);
