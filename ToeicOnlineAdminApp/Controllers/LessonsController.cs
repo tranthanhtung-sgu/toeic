@@ -9,6 +9,8 @@ using Application.ViewModels.Category;
 using System.Collections.Generic;
 using ToeicOnlineAdminApp.Services.Level;
 using Application.ViewModels.Common;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,11 +24,13 @@ namespace ToeicOnlineAdminApp.Controllers
         private readonly ILevelApiClient _levelApiClient;
         public LessonsController(IConfiguration configuration,
             ILessonApiClient apiLessonClient,
-            ICategoryApiClient categoryApiClient)
+            ICategoryApiClient categoryApiClient,
+            ILevelApiClient levelApiClient)
         {
             _apiLessonClient = apiLessonClient;
             _configuration = configuration;
             _categoryApiClient = categoryApiClient;
+            _levelApiClient = levelApiClient;
         }
 
         public async Task<IActionResult> Index(string keyword, int? teacherId,
@@ -69,8 +73,27 @@ namespace ToeicOnlineAdminApp.Controllers
 
 
         [HttpGet]
-        public IActionResult Create()
-        {
+        public async Task<IActionResult> Create()
+        { 
+            
+            var resultCategory = await _categoryApiClient.GetAll();
+            if (resultCategory != null)
+            {
+                ViewBag.Category = resultCategory.Select(x => new SelectListItem()
+                {
+                    Text = x.name,
+                    Value = x.Id.ToString()
+                });
+            }
+            var resultLevel = await _levelApiClient.GetAllLevel();
+            if (resultLevel != null)
+            {
+                ViewBag.Level = resultLevel.Select(x => new SelectListItem()
+                {
+                    Text = x.name,
+                    Value = x.Id.ToString()
+                });
+            }
             return View();
         }
 

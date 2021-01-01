@@ -7,6 +7,6 @@ namespace ToeicOnlineAdminApp.Services.Category
 {
     public interface ICategoryApiClient
     {
-        Task<ApiResult<PagedResult<CategoryVm>>> GetAll();
+        Task<List<CategoryVm>> GetAll();
     }
 }

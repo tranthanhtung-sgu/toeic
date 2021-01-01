@@ -6322,7 +6322,7 @@
       "outputPath": "/Users/tranthanhtung/Documents/GitHub/toeic/mvcMovie/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tranthanhtung/.nuget/NuGet/NuGet.Config"
+        "/Users/tranthanhtung/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

@@ -1,3 +1,4 @@
+using Application.ViewModels.Category;
 using Application.ViewModels.Class;
 using Application.ViewModels.Lessons;
 using Application.ViewModels.Level;
@@ -15,7 +16,9 @@ namespace API.Mapping
             CreateMap<ClassCreateModel, Category>();
             CreateMap<ClassCreateModel, Category>().ReverseMap();
             CreateMap<LessonVm, GuideLine>();
-            CreateMap<LessonVm, GuideLine>().ReverseMap(); ;
+            CreateMap<LessonVm, GuideLine>().ReverseMap();
+            CreateMap<Category, CategoryVm>();
+            CreateMap<Category, CategoryVm>().ReverseMap();
         }
     }
 }

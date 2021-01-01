@@ -14459,13 +14459,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Lesson/Index.cshtml",
-      "TargetPath": "Views\\Lesson\\Index.cshtml",
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Home/Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Home/Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Lessons/Index.cshtml",
+      "TargetPath": "Views\\Lessons\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14491,6 +14491,11 @@
     {
       "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/User/Edit.cshtml",
       "TargetPath": "Views\\User\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tranthanhtung/Documents/GitHub/toeic/ToeicOnlineAdminApp/Views/Lessons/Create.cshtml",
+      "TargetPath": "Views\\Lessons\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

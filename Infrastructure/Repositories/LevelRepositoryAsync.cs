@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Application.Interfaces;
+using Application.ViewModels.Common;
 using Application.ViewModels.Level;
 using AutoMapper;
 using Domain.Interfaces;
@@ -17,7 +19,7 @@ namespace Infrastructure.Repositories
         private readonly IMapper _mapper;
         public LevelRepositoryAsync(ToeicOnlineContext dbContext, IMapper mapper) : base(dbContext)
         {
-            _levels = dbContext.Set<Level>();
+            _levels = _dbContext.Set<Level>();
             _mapper = mapper;
         }
 
@@ -34,6 +36,17 @@ namespace Infrastructure.Repositories
             result.sign = level.sign;
             result.name = level.name;
             await UpdateAsync(result);
+        }
+        public async Task<List<LevelViewModel>> GetAllLevel ()
+        {
+            var levels = await _dbContext.Level
+                .Select(x => new LevelViewModel()
+                {
+                    Id = x.Id,
+                    name = x.name,
+                    sign = x.sign
+                }).ToListAsync();
+            return levels;
         }
     }
 }

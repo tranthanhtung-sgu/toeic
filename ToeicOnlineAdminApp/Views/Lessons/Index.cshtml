@@ -40,7 +40,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-xs-12">
-                                <a class="btn btn-success m-2" asp-action="Create" asp-controller="Lesson">Tạo mới</a>
+                                <a class="btn btn-success m-2" asp-action="Create" asp-controller="Lessons">Tạo mới</a>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <label>
                                 Search:
                             </label>
-                            <form action="/Lesson/Index" method="get">
+                            <form asp-action="Index" asp-controller="Lessons" method="get">
                                 <div class="row">
                                     <div class="col-md-7">
                                         <input type="text" name="keyword" value="@ViewBag.Keyword" class="form-control form-control-sm" placeholder="Tìm kiếm" aria-controls="dataTable">

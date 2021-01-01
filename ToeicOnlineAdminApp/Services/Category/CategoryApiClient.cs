@@ -11,34 +11,20 @@ using Newtonsoft.Json;
 
 namespace ToeicOnlineAdminApp.Services.Category
 {
-    public class CategoryApiClient : ICategoryApiClient
+    public class CategoryApiClient : BaseApiClient,ICategoryApiClient
     {
-        private readonly IConfiguration _configuration;
-        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public CategoryApiClient(IHttpContextAccessor httpContextAccessor,
-                    IConfiguration configuration)
+            IConfiguration configuration) : base(httpContextAccessor, configuration)
         {
-            _configuration = configuration;
-            _httpContextAccessor = httpContextAccessor;
         }
 
-        public async Task<ApiResult<PagedResult<CategoryVm>>> GetAll()
+        public async Task<List<CategoryVm>> GetAll()
         {
-            var sessions = _httpContextAccessor.HttpContext.Session.GetString("Token");
-            HttpClientHandler clientHandler = new HttpClientHandler();
-            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-            HttpClient client = new HttpClient(clientHandler);
-            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", sessions);
-            var response = await client.GetAsync($"/api/category");
-            var body = await response.Content.ReadAsStringAsync();
-            if (response.IsSuccessStatusCode)
-            {
-                PagedResult<CategoryVm> myDeserializedObjList = (PagedResult<CategoryVm>)JsonConvert.DeserializeObject(body, typeof(PagedResult<CategoryVm>));
-                return new ApiSuccessResult<PagedResult<CategoryVm>>(myDeserializedObjList);
-            }
-            return JsonConvert.DeserializeObject<ApiErrorResult<PagedResult<CategoryVm>>>(body);
+            var data = await GetAsync<List<CategoryVm>>(
+                $"/api/category");
+            return data;
+
         }
     }
 }

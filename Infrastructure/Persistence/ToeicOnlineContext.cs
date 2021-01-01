@@ -45,6 +45,6 @@ namespace Infrastructure.Persistence
         public DbSet<Teacher> Teacher { get; set; }
         public DbSet<GuideLine> GuideLine { get; set; }
         public DbSet<Testing> Testing { get; set; }
-        public DbSet<GuideLineImage> GuideLineImages { get; set; }
+        public DbSet<GuideLineImage> GuideLineImage { get; set; }
     }
 }

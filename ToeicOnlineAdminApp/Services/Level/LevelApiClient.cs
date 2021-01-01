@@ -21,10 +21,10 @@ namespace ToeicOnlineAdminApp.Services.Level
         {  
         }
 
-        public async Task<ApiResult<PagedResult<LevelViewModel>>> GetAll()
+        public async Task<List<LevelViewModel>> GetAllLevel()
         {
-            var data = await GetAsync<ApiResult<PagedResult<LevelViewModel>>> (
-                $"/api/Level");
+            var data = await GetAsync<List<LevelViewModel>>(
+                $"/api/levels");
             return data;
         }
     }

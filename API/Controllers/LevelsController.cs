@@ -14,11 +14,11 @@ namespace API.Controllers
 {
     [Route("api/[Controller]")]
     [ApiController]
-    public class LevelController : ControllerBase
+    public class LevelsController : ControllerBase
     {
         private readonly ILevelRepositoryAsync _levelRepositoryAsync;
         private readonly IMapper _mapper;
-        public LevelController(ILevelRepositoryAsync levelRepositoryAsync, IMapper mapper)
+        public LevelsController(ILevelRepositoryAsync levelRepositoryAsync, IMapper mapper)
         {
             _levelRepositoryAsync = levelRepositoryAsync;
             _mapper = mapper;
@@ -26,7 +26,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var levels = await _levelRepositoryAsync.GetAllAsync();
+            var levels = await _levelRepositoryAsync.GetAllLevel();
             return Ok(levels);
         }
         [HttpGet("{id}")]

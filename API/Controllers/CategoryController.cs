@@ -22,7 +22,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var categories = await _categoryRepositoryAsync.GetAllAsync();
+            var categories = await _categoryRepositoryAsync.GetAllCategory();
             return Ok(categories);
         }
     }

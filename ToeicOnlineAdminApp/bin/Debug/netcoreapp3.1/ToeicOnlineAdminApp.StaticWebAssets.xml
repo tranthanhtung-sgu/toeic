@@ -1,3 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
   <ContentRoot BasePath="/Identity" Path="/Users/tranthanhtung/.nuget/packages/microsoft.aspnetcore.identity.ui/3.1.1/build/../staticwebassets/V4/" />
+  <ContentRoot BasePath="_content/API" Path="/Users/tranthanhtung/Documents/GitHub/toeic/API/wwwroot/" />
 </StaticWebAssets>

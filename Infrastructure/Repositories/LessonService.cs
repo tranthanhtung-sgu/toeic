@@ -59,7 +59,7 @@ namespace Infrastructure.Repositories
                         Caption = "Thumbnail image",
                         DateCreated = DateTime.Now,
                         FileSize = request.ThumbnailsImage.Length,
-                        ImagePath = "ccc",
+                        ImagePath = await this.SaveFile(request.ThumbnailsImage),
                         IsDefault = true,
                         SortOrder = 1
                     }
@@ -124,8 +124,8 @@ namespace Infrastructure.Repositories
                         join cate in _dbContext.Category on ls.categoryId equals cate.Id
                         where ls.Id == lessonId
                         select new { ls, lv, tc, cate }).FirstOrDefaultAsync();
-            var image = await _dbContext.GuideLineImages.Where(x => x.GuideLineId == lessonId && x.IsDefault == true).FirstOrDefaultAsync();
-
+            var image = await _dbContext.GuideLineImage
+                                .Where(x=>x.GuideLineId == lessonId && x.IsDefault == true).FirstOrDefaultAsync();
             var lessonViewModel = new LessonVm()
             {
                 Id = query.ls.Id,

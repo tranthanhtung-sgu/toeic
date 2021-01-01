@@ -7,6 +7,6 @@ namespace ToeicOnlineAdminApp.Services.Level
 {
     public interface ILevelApiClient
     {
-        Task<ApiResult<PagedResult<LevelViewModel>>> GetAll();
+        Task<List<LevelViewModel>> GetAllLevel();
     }
 }
